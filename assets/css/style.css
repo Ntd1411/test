@@ -78,7 +78,7 @@ h4 {
 .header.fixed {
     position: sticky;
     top: -28px;
-    z-index: 1;
+    z-index: 1000;
     background-color: #fff;
 }
 
@@ -301,8 +301,23 @@ nav li.active a::after {
 .popular .course {
     margin-top: 47px;
     display: flex;
-    justify-content: center;
+    
+}
+
+.popular .items {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    
+}
+
+.popular .block {
+    width: 100%;
+    display: flex;
     gap: 30px;
+    flex-shrink: 0;
+    /* transform: translateX(-100%); */
+    transition: 1s ease;
 }
 
 .popular .course .info {
@@ -310,7 +325,7 @@ nav li.active a::after {
 }
 
 .popular .course .item {
-    width: calc(33.33% - 20px);
+    min-width: calc(33.33% - 20px);
     border-radius: 12px;
     background: #FFF;
     box-shadow: 0px 18px 36px 0px rgba(0, 0, 0, 0.05);
@@ -375,6 +390,7 @@ nav li.active a::after {
 /* ===================Quote============================== */
 .quote {
     background-color: #2E2100;
+    position: relative;
 }
 
 .quote .body {
@@ -388,6 +404,7 @@ nav li.active a::after {
     width: 100%;
     flex-shrink: 0;
     padding: 96px 0;
+    transition: all 1s ease;
 }
 
 .quote .info {
@@ -415,21 +432,25 @@ nav li.active a::after {
     line-height: 1.86;
 }
 
-.quote .info .controls {
+.quote .controls {
     display: flex;
     gap: 6px;
     margin-top: 28px;
+    position: absolute;
+    bottom: 70px;
+    z-index: 1;
 }
 
-.quote .info .controls .dot {
+.quote .dot {
 
     width: 6px;
     height: 6px;
     border-radius: 50%;
     background-color: #634700;
+    cursor: pointer;
 }
 
-.quote .info .controls .dot.active {
+.quote .dot.active {
     background-color: #FFB900;
 }
 
@@ -587,6 +608,7 @@ nav li.active a::after {
     height: 6px;
     border-radius: 50%;
     background-color: #5F5B53;
+    cursor: pointer;
 }
 
 .blog .dot.active {
@@ -634,7 +656,7 @@ nav li.active a::after {
     justify-content: center;
     margin: 38px 0 0;
     gap: 6px;
-    cursor: pointer;
+    
 }
 
 .blog .content {
@@ -645,6 +667,8 @@ nav li.active a::after {
 .blog .list-bloglist {
     width: 100%;
     flex-shrink: 0;
+    transition: all 1s ease;
+    transform: translateX(-100%);
 }
 
 /* ======================== Footer ========================= */
